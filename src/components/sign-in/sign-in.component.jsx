@@ -4,7 +4,6 @@ import CustomButton from "../custom-button/custom-button.component";
 import {signInWithGoogle} from "../../utils/firebase.util";
 import {auth} from "../../utils/firebase.util";
 import {withRouter} from "react-router-dom";
-import {loadingUser, loadedUser} from "../../redux/user/user.actions"
 import "./sign-in.styles.scss";
 class SignIn extends React.Component {
   state = {

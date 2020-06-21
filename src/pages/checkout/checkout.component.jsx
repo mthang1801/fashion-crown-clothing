@@ -39,7 +39,7 @@ const Checkout = ({cartItems, totalPrice}) => {
       <div className="text-warning">
         You can use test credit cart : 4242 4242 4242 4242 - expDate : 05/23 - cvc : 999
         <br/>
-        Otherwise, you can follow lists of testing cart number <a href="https://stripe.com/docs/testing" target="_blank">here</a>
+        Otherwise, you can follow lists of testing cart number <a href="https://stripe.com/docs/testing" target="_blank" rel="noopener noreferrer">here</a>
       </div>
       <StripeCheckoutButton price={totalPrice}/>
     </div>
