@@ -1,0 +1,19 @@
+.collections-preview{  
+  display : flex ; 
+  flex-direction: column;  
+  margin-bottom : 2rem;
+  .title {    
+    margin : 1rem auto;
+    font-size : 2.25em;
+    color : black;
+    font-weight: bold;
+  }
+  .preview{
+    display : flex ;          
+    flex : 1 1 auto;
+    justify-content: space-between;    
+  }
+}
+
+
+

@@ -1,0 +1,34 @@
+.cart-dropdown{
+  position : absolute;
+  width : 260px ;
+  height: 370px;
+  border : 1px solid black;
+  right : 1.5rem;
+  top : 70%;
+  background-color: white;
+ 
+  display : flex ;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  padding : 1rem; 
+  z-index : 5;
+  .cart-items{
+    height: 85%;
+    overflow : auto;
+    position :relative;
+  }
+  .empty-item{
+    position: absolute;
+    font-size : 1.2em;
+    font-weight: bold;    
+    top: 50%; 
+    left : 50% ;
+    transform: translate(-50%, -50%);
+  }
+}
+
+
+.hidden{
+  display: none ;
+}

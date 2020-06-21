@@ -1,0 +1,20 @@
+.auth-page{
+  margin : 0 auto;
+  display : flex ; 
+  justify-content: space-around;
+}
+.auth-page > *{
+  flex-basis:  40%;
+}
+
+@media(max-width : 600px){
+  .auth-page{
+    flex-direction: column;
+  }
+}
+
+@media (min-width : 992px){
+  .auth-page{
+    width : 70%;
+  }
+}

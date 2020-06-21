@@ -1,0 +1,19 @@
+.sign-in{
+  width : 90%;
+}
+
+@media (max-width : 1280px){
+  .form-actions{
+    display: flex ;
+    flex-direction: column;        
+  }
+  .form-actions *{
+    margin-top : 1rem;
+  }
+}
+
+
+.form-actions {
+  display : flex ; 
+  justify-content: space-around;
+}

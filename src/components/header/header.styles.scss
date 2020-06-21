@@ -1,0 +1,39 @@
+.header{  
+  height : 70px; 
+  width : 100% ; 
+  margin-bottom : 25px ;  
+  padding : 1rem 0;
+  position : relative;
+  .header-content{
+    display : flex ; 
+    justify-content: space-between;
+    position : relative;   
+    align-items: center;
+    .logo-container{     
+      width : 70px;      
+      margin-left : 2rem;   
+    }
+    .options{  
+      margin-right : 2rem;
+      height : 100%;
+      width : 50%; 
+      display : flex ; 
+      justify-content: flex-end;
+      align-items: center;
+      .option{
+        cursor: pointer;
+        padding : 1rem ;
+        text-transform: uppercase;
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+            
+    }
+    
+  }
+  
+}
+
+
+

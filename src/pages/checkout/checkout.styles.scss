@@ -1,0 +1,61 @@
+.checkout-page{
+  width : 90% ; 
+  margin : auto; 
+  min-height :60vh;
+  margin-bottom: 5rem;
+  display : flex ; 
+  flex-direction: column;  
+  align-items: center;
+  text-align: center;
+  .checkout-header{
+    width : 100% ;
+    display : flex ; 
+    justify-content: space-between;
+    padding : .75rem;
+    border-bottom : 1px solid darkgray;        
+    .header-block{
+      width : 18%;
+      text-transform: capitalize;
+      &:first-child{
+        width : 20%;
+      }
+      &:last-child{
+        width : 8%;
+      }
+    }
+  }
+  .checkout-body{
+    width : 100%;
+    display : flex ;
+    flex-direction: column;
+    border-bottom : 1px solid darkgray;
+  }
+  .checkout-footer{
+    align-self: flex-end;
+    font-size : 1.5em;
+    font-weight: bold;
+    margin-bottom : 2rem;
+  }
+  .text-warning{
+    color : red ; 
+    font-size : 1.3em;
+    margin : 2rem 0; 
+    a{
+      color : blue ;
+      text-decoration: underline;
+      &:hover{
+        color : purple;
+      }
+    }
+  }
+  button{
+    margin-left : auto ;
+  }
+}
+
+
+@media (min-width: 1280px){
+  .checkout-page{
+    width : 80%;
+  }
+}

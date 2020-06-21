@@ -1,0 +1,48 @@
+.checkout-item{
+  display : flex ;
+  width : 100%;
+  
+  align-items: center;
+  margin : 1rem auto;  
+  .name,
+  .price,
+  .quantity,
+  .totalprice{
+    width : 18%;    
+  }
+  .remove-button{
+    width : 8%;
+    color :darkgray;
+    cursor: pointer;
+    &:hover{
+      color : black;
+    }
+  }
+  .item-container{   
+    width : 20%;
+    height : 150px;
+    img{
+      width : 100%;
+      height : 100%;
+    }
+  }
+  .quantity{
+    display : flex;
+    justify-content: center;   
+    align-items: center; 
+  }
+  .increase, .decrease{
+    cursor: pointer;   
+    font-weight: 700;
+    color : rgb(120, 120, 120);
+    &:hover{     
+      color :black;
+    }
+  }
+  .increase{
+    margin-left:3px;
+  }
+  .decrease{
+    margin-right : 3px;
+  }
+}
