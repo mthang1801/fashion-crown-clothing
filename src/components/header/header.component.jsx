@@ -7,38 +7,36 @@ import CartDropdown from "../cart-dropdown/cart-dropdown.component";
 import {connect} from "react-redux";
 import {createStructuredSelector} from "reselect";
 import {selectCartShow} from "../../redux/cart/cart.selectors";
-import {selectCurrentUser, selectUserLoading} from "../../redux/user/user.selectors";
+import {selectCurrentUser} from "../../redux/user/user.selectors";
 import {withRouter} from "react-router-dom";
-
-import "./header.styles.scss";
+// import "./header.styles.scss";
+import {HeaderContainer, HeaderContent, LogoContainer, OptionsContainer, OptionLink} from "./header.styles"
 
 const Header = (props) => { 
   
   return (
-    <div className="header">
-      <div className="header-content">
-        <Link className="logo-container" to="/">
-          <Logo src={Logo} className="logo" />
-        </Link>
-        <div className="options">
-          <Link className="option" to="/shop">SHOP</Link>
+    <HeaderContainer>
+      <HeaderContent>
+        <LogoContainer to="/">
+          <Logo className="logo" />
+        </LogoContainer>
+        <OptionsContainer>
+          <OptionLink to="/shop">SHOP</OptionLink>
           { props.currentUser ?                       
-            <div className="option" onClick={() => auth.signOut()}>SIGN OUT</div>: 
-            props.loading ? "" : 
-            <Link className="option" to="/auth">AUTH</Link>
+            <OptionLink as="div" onClick={() => auth.signOut()}>SIGN OUT</OptionLink>:             
+            <OptionLink className="option" to="/auth">AUTH</OptionLink>
           }   
           { props.location.pathname !== "/checkout" && <CartIcon /> }
-        </div>     
-      </div>
+        </OptionsContainer>     
+      </HeaderContent>
       {props.show && <CartDropdown className="option"/>}
-    </div>
+    </HeaderContainer>
   )
 }
 
 const mapStateToProps = createStructuredSelector ({
   currentUser : selectCurrentUser,
   show : selectCartShow,
-  loading : selectUserLoading
 })
 
 export default withRouter(connect(mapStateToProps)(Header))

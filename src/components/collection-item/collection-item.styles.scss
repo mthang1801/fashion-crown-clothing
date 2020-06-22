@@ -1,5 +1,5 @@
 .collection-item{
-  width : 22.5% ; 
+  width : 23% ;
   height : 350px ;
   display : flex ; 
   flex-direction: column;
@@ -44,7 +44,7 @@
 
 @media (max-width : 500px){
   .collection-item{
-    width : 450px;
+    width : 450px;    
     margin : 2rem auto;  
   }
 }
@@ -60,7 +60,7 @@
 @media (min-width: 768px) and (max-width : 992px){
   .collection-item{
     width : 45%;
-    margin : 2rem auto;  
+    margin : 2rem auto;      
   }
 }
 

@@ -1,13 +1,8 @@
 import React from 'react';
-import "./spinner.styles.scss";
-import Modal from "../modal/modal.component";
+import {SpinnerOverlay, SpinnerContainer} from "./spinner.styles";
 const Spinner = () => {
   return (
-    <div className="spinner">
-      <Modal/>
-      <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
-    </div>
-    
+    <SpinnerOverlay><SpinnerContainer/></SpinnerOverlay>
   )
 }
 
