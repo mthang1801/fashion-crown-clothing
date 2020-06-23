@@ -16,3 +16,8 @@ export const selectCollectionsForPreview = createSelector(
   selectShopCollections,
   (collections) => Object.keys(collections).map((key) => collections[key])
 );
+
+export const selectCollectionsLoading = createSelector(
+  selectShop,
+  (shop) => shop.isLoading
+);
