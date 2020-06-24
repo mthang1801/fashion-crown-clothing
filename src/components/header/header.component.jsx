@@ -1,7 +1,5 @@
 import React from 'react'
-import {Link} from "react-router-dom";
 import {ReactComponent as Logo} from "../../assets/images/crown.svg";
-import {auth} from "../../utils/firebase.util";
 import CartIcon from "../cart-icon/cart-icon.component";
 import CartDropdown from "../cart-dropdown/cart-dropdown.component";
 import {connect} from "react-redux";
@@ -10,7 +8,6 @@ import {selectCartShow} from "../../redux/cart/cart.selectors";
 import {selectCurrentUser} from "../../redux/user/user.selectors";
 import {withRouter} from "react-router-dom";
 import {signOutStart} from "../../redux/user/user.actions"
-// import "./header.styles.scss";
 import {HeaderContainer, HeaderContent, LogoContainer, OptionsContainer, OptionLink} from "./header.styles"
 
 const Header = (props) => { 

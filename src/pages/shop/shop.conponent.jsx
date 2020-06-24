@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import CollectionOverviewContainer from "../../components/collections-overview/collections-overview.container";
 import CollectionPageContainer from "../collection/collection.container";
 import {Route} from "react-router-dom";
@@ -7,23 +7,23 @@ import {selectCollectionsLoading} from "../../redux/shop/shop.selector";
 import {fetchCollectionsStart} from "../../redux/shop/shop.actions";
 
 import {connect} from "react-redux";
-import WithSpinner from "../../hoc/with-spinner/with-spinner.component";
 import "./shop.styles.scss";
 
-class ShopPage extends React.Component {    
+const ShopPage = ({isCollectionsLoading, fetchCollectionsStart, match}) => {    
 
-  componentDidMount(){   
-    this.props.fetchCollectionsStart();
-  }
+  useEffect(() => {
+    console.log("subcribing")
+    const subcribeFetchCollections = fetchCollectionsStart(); 
 
-  render(){   
-    return(
-      <div className="shop-page">
-        <Route exact path={`${this.props.match.path}`} component={CollectionOverviewContainer}/>
-        <Route path={`/shop/:collectionId`} component={CollectionPageContainer} />
-      </div>  
-    )  
-  }
+  },[fetchCollectionsStart])       
+
+  return(
+    <div className="shop-page">
+      <Route exact path={`${match.path}`} component={CollectionOverviewContainer}/>
+      <Route path={`/shop/:collectionId`} component={CollectionPageContainer} />
+    </div>  
+  )  
+
   
 }
 

@@ -1,4 +1,3 @@
-import React from "react";
 import {createStructuredSelector} from "reselect";
 import { selectCollectionsLoading} from "../../redux/shop/shop.selector";
 import WithSpinner from  "../../hoc/with-spinner/with-spinner.component";
