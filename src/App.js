@@ -5,80 +5,56 @@ import AuthPage from "./pages/auth/auth.component";
 import CheckoutPage from "./pages/checkout/checkout.component";
 import { Switch, Route, Redirect } from "react-router-dom";
 import Header from "./components/header/header.component";
-import {
-  auth,
-  createUserProfileDocument,
-  addCollectionsAndItems,
-} from "./utils/firebase.util";
 import { selectCurrentUser } from "./redux/user/user.selectors";
 import { setCurrentUser } from "./redux/user/user.actions";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
-
+import { checkUserSession } from "./redux/user/user.actions";
 import "./App.css";
 import Spinner from "./components/spinner/spinner.component";
 
 class App extends React.Component {
-  state = {
-    loading: true,
-  };
   unsubcribeAuthForm = null;
   componentDidMount() {
-    const { setCurrentUser } = this.props;
-    this.unsubcribeAuthForm = auth.onAuthStateChanged(async (userAuth) => {
-      if (userAuth) {
-        const userRef = await createUserProfileDocument(userAuth);
-        userRef.onSnapshot((snapShot) => {
-          setCurrentUser({
-            id: snapShot.id,
-            ...snapShot.data(),
-          });
-        });
-      } else {
-        setCurrentUser(userAuth);
-      }
-      this.setState({ loading: false });
-    });
+    const { checkUserSession } = this.props;
+    checkUserSession();
   }
 
   componentWillUnmount() {
     this.unsubcribeAuthForm();
   }
   render() {
-    if (this.state.loading) return <Spinner />;
     return (
-      <React.Fragment>
-        <div className="container">
-          <Header />
-          <Switch>
-            <Route exact path="/" component={HomePage} />
-            <Route path="/shop" component={ShopPage} />
-            <Route
-              path="/auth"
-              render={(props) =>
-                this.props.currentUser ? (
-                  <Redirect to="/" />
-                ) : (
-                  <AuthPage {...props} />
-                )
-              }
-            />
-            <Route
-              exact
-              path="/checkout"
-              render={(props) =>
-                this.props.loading ? (
-                  ""
-                ) : this.props.currentUser ? (
-                  <CheckoutPage {...props} />
-                ) : (
-                  <AuthPage {...props} />
-                )
-              }
-            />
-          </Switch>
-        </div>
-      </React.Fragment>
+      <div className="container">
+        <Header />
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route path="/shop" component={ShopPage} />
+          <Route
+            path="/auth"
+            render={(props) =>
+              this.props.currentUser ? (
+                <Redirect to="/" />
+              ) : (
+                <AuthPage {...props} />
+              )
+            }
+          />
+          <Route
+            exact
+            path="/checkout"
+            render={(props) =>
+              this.props.loading ? (
+                ""
+              ) : this.props.currentUser ? (
+                <CheckoutPage {...props} />
+              ) : (
+                <AuthPage {...props} />
+              )
+            }
+          />
+        </Switch>
+      </div>
     );
   }
 }
@@ -88,5 +64,6 @@ const mapStateToProps = createStructuredSelector({
 });
 const mapDispatchToProps = (dispatch) => ({
   setCurrentUser: (user) => dispatch(setCurrentUser(user)),
+  checkUserSession: () => dispatch(checkUserSession()),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(App);

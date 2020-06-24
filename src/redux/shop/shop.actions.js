@@ -17,15 +17,15 @@ export const fetchCollectionsFailure = (error) => ({
   payload: error,
 });
 
-export const fetchCollectionsStartAsync = () => (dispatch) => {
-  dispatch(fetchCollectionsStart());
+// export const fetchCollectionsStartAsync = () => (dispatch) => {
+//   dispatch(fetchCollectionsStart());
 
-  const collectionsRef = firestore.collection("collections");
-  collectionsRef
-    .get()
-    .then((snapshot) => {
-      const collectionsMap = convertCollectionsSnapshotToMap(snapshot.docs);
-      dispatch(fetchCollectionsSuccess(collectionsMap));
-    })
-    .catch((error) => fetchCollectionsFailure(error.message));
-};
+//   const collectionsRef = firestore.collection("collections");
+//   collectionsRef
+//     .get()
+//     .then((snapshot) => {
+//       const collectionsMap = convertCollectionsSnapshotToMap(snapshot.docs);
+//       dispatch(fetchCollectionsSuccess(collectionsMap));
+//     })
+//     .catch((error) => fetchCollectionsFailure(error.message));
+// };

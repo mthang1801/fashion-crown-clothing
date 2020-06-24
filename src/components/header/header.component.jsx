@@ -9,6 +9,7 @@ import {createStructuredSelector} from "reselect";
 import {selectCartShow} from "../../redux/cart/cart.selectors";
 import {selectCurrentUser} from "../../redux/user/user.selectors";
 import {withRouter} from "react-router-dom";
+import {signOutStart} from "../../redux/user/user.actions"
 // import "./header.styles.scss";
 import {HeaderContainer, HeaderContent, LogoContainer, OptionsContainer, OptionLink} from "./header.styles"
 
@@ -23,7 +24,7 @@ const Header = (props) => {
         <OptionsContainer>
           <OptionLink to="/shop">SHOP</OptionLink>
           { props.currentUser ?                       
-            <OptionLink as="div" onClick={() => auth.signOut()}>SIGN OUT</OptionLink>:             
+            <OptionLink as="div" onClick={() => props.signOutStart()}>SIGN OUT</OptionLink>:             
             <OptionLink className="option" to="/auth">AUTH</OptionLink>
           }   
           { props.location.pathname !== "/checkout" && <CartIcon /> }
@@ -39,4 +40,8 @@ const mapStateToProps = createStructuredSelector ({
   show : selectCartShow,
 })
 
-export default withRouter(connect(mapStateToProps)(Header))
+const mapDispatchToProps = dispatch => ({
+  signOutStart : () => dispatch(signOutStart())
+})
+
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(Header))
