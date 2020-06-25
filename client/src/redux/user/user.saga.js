@@ -51,6 +51,7 @@ export function* signInWithGoogle() {
 export function* signInWithEmail({ payload: { email, password } }) {
   try {
     const { user } = yield auth.signInWithEmailAndPassword(email, password);
+    console.log(user);
     yield call(getSnapshotFromUserAuth, user);
   } catch (error) {
     yield put(signInFailure(error.message));
