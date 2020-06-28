@@ -1,24 +1,26 @@
 import React from 'react'
-import "./collection-item.styles.scss";
+import {CollectionFooterContainer, CollectionItemContainer, AddButton, BackgroundImage, NameContainer, PriceContainer, CustomButtonContainer} from "./collection-item.styles"
 import CustomButton from "../custom-button/custom-button.component";
 import {connect}  from "react-redux";
 import {addItemToCart} from "../../redux/cart/cart.actions";
+import { BackgroundImageConainer } from '../menu-item/menu-item.styles';
 const CollectionItem = ({item, addItemToCart}) => {
   
   const { name, imageUrl, price} = item;
   return (
-    <div className="collection-item">
-      <div className="image" style={{backgroundImage: `url(${imageUrl})`}}>
-        <div></div>
-      </div>
-      <div className="collection-footer">
-        <div className="collection-footer__name">{name}</div>
-        <div className="collection-footer__price">${price}</div>
-      </div>
-      <div className="custom-button">
-        <CustomButton variant="contained" color="white" onClick={() => addItemToCart(item)}>Add To cart</CustomButton>
-      </div>     
-    </div>
+    <CollectionItemContainer >
+      <BackgroundImage imageUrl={imageUrl}>
+      
+      </BackgroundImage>
+      <CollectionFooterContainer>
+        <NameContainer>{name}</NameContainer>
+        <PriceContainer>${price}</PriceContainer>
+      </CollectionFooterContainer>     
+      <CustomButtonContainer> 
+        <CustomButton variant="contained" color="white" onClick={() => addItemToCart(item)}>Add To cart</CustomButton> 
+      </CustomButtonContainer>
+        
+    </CollectionItemContainer>
   )
 }
 

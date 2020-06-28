@@ -10,7 +10,7 @@ import { setCurrentUser } from "./redux/user/user.actions";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import { checkUserSession } from "./redux/user/user.actions";
-import "./App.css";
+import { GlobalStyle } from "./global.styles";
 // import Spinner from "./components/spinner/spinner.component";
 
 const App = ({ checkUserSession, currentUser }) => {
@@ -19,8 +19,9 @@ const App = ({ checkUserSession, currentUser }) => {
   }, [checkUserSession]);
 
   return (
-    <div className="container">
+    <div>
       <Header />
+      <GlobalStyle />
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/shop" component={ShopPage} />

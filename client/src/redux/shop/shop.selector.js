@@ -7,17 +7,21 @@ export const selectShopCollections = createSelector(
 );
 
 export const selectCollection = (collectionUrlParam) =>
-  createSelector(
-    selectShopCollections,
-    (collections) => collections[collectionUrlParam]
-  );
+  createSelector(selectShopCollections, (collections) => {
+    return collections[collectionUrlParam];
+  });
 
 export const selectCollectionsForPreview = createSelector(
-  selectShopCollections,
+  [selectShopCollections],
   (collections) => Object.keys(collections).map((key) => collections[key])
 );
 
 export const selectCollectionsLoading = createSelector(
-  selectShop,
+  [selectShop],
   (shop) => shop.isLoading
+);
+
+export const selectIsCollectionsLoaded = createSelector(
+  [selectShop],
+  shop => Object.entries(shop.collections).length > 0
 );

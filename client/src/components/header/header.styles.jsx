@@ -4,10 +4,13 @@ import {Link} from "react-router-dom";
 
 export const HeaderContainer = styled.div`
   height : 70px; 
-  width : 100% ; 
   margin-bottom : 25px ;  
   padding : 1rem 0;
   position : relative;
+  @media screen and (max-width:800px){
+    height : 60px; 
+    padding : 10px ; 
+  }
 }
 `
 
@@ -22,16 +25,21 @@ export const LogoContainer = styled(Link)`
   .logo-container{     
     width : 70px;      
     margin-left : 2rem;   
+    @media screen and (max-width:800px){
+      width : 50px;       
+    }
   }
 `
 
-  export const OptionsContainer = styled.div`
-    margin-right : 2rem;
-    height : 100%;
-    width : 50%; 
-    display : flex ; 
-    justify-content: flex-end;
-    align-items: center;
+export const OptionsContainer = styled.div` 
+  height : 100%;
+  width : 50%; 
+  display : flex ; 
+  justify-content: flex-end;
+  align-items: center;
+  @media screen and (max-width: 800px){
+    width : 80%;
+  }
 `
 
 export const OptionLink = styled(Link)`
