@@ -1,0 +1,2 @@
+.collection-page{display:flex;flex-direction:column;align-items:center;width:100%}.collection-page .title{font-size:2rem;font-weight:bold;margin:2rem auto}.collection-page .collection-items{width:100%;display:flex;justify-content:space-between;flex-wrap:wrap}.collection-page .collection-items>*{margin:1rem 0.5rem;flex:1 1 auto}
+/*# sourceMappingURL=collection.styles.min.css.map */

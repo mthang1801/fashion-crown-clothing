@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,gBAAgB,AAAA,CACd,OAAO,CAAG,IAAK,CACf,cAAc,CAAE,MAAM,CACtB,WAAW,CAAE,MAAM,CACnB,KAAK,CAAG,IAAI,CAiBb,AArBD,AAKE,gBALc,CAKd,MAAM,AAAA,CACJ,SAAS,CAAG,IAAI,CAChB,WAAW,CAAE,IAAI,CACjB,MAAM,CAAG,SAAS,CACnB,AATH,AAUE,gBAVc,CAUd,iBAAiB,AAAA,CACf,KAAK,CAAG,IAAI,CACZ,OAAO,CAAG,IAAK,CACf,eAAe,CAAE,aAAa,CAC9B,SAAS,CAAE,IAAI,CAMhB,AApBH,AAgBI,gBAhBY,CAUd,iBAAiB,CAMX,CAAC,AAAC,CACJ,MAAM,CAAG,WAAY,CACrB,IAAI,CAAG,QAAQ,CAChB",
+    "sources": [
+        "../../client/src/pages/collection/collection.styles.scss"
+    ],
+    "names": [],
+    "file": "collection.styles.min.css"
+}

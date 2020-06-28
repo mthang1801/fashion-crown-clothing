@@ -5,8 +5,8 @@ import {withRouter} from "react-router-dom";
 const CollectionsPreview = ({title, items, history, match}) => { 
   return (
     <CollectionPreviewContainer>
-      <CollectionTitle className="title"  onClick={() => history.push(`${match.path}/${title.toLowerCase()}`)} style={{cursor:"pointer"}}>{title}</CollectionTitle>
-      <CollectionPreviewItems className="preview">
+      <CollectionTitle onClick={() => history.push(`${match.path}/${title.toLowerCase()}`)} style={{cursor:"pointer"}}>{title}</CollectionTitle>
+      <CollectionPreviewItems >
         {items.filter((item,idx) => idx < 4).map( (item) => ( 
           <CollectionItem key={item.id} item={item} />
         ))}

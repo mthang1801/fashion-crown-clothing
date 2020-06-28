@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../../client/src/components/stripe-button/stripe-button.styles.scss"
+    ],
+    "names": [],
+    "file": "stripe-button.styles.min.css"
+}

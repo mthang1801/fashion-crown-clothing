@@ -8,8 +8,7 @@ import {withRouter} from "react-router-dom";
 import {toggleCart} from "../../redux/cart/cart.actions";
 import "./cart-dropdown.styles.scss";
 
-const CartDropdown = ({cartItems,  history, match, closeCart}) => { 
-  
+const CartDropdown = ({cartItems,  history, match, closeCart}) => {   
   const handleGoToCheckout = e => {
     closeCart();
     history.push("/checkout");
